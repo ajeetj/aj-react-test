@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +35,45 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Comment{
+  width: 400px;
+  height: 25px;
+  padding: 10px;
+  border: 10px solid lightgray;
+  text-align: left;
+}
+
+.CommentParent{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.CommentList{
+  max-height: 600px;
+  overflow: scroll;
+}
+
+.AddComment{
+  width: 350px;
+  height: 25px;
+  padding: 10px;
+  border: 10px solid lightslategrey;
+  text-align: left;
+}
+
+.AddCommentParent{
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.AddCommentParent button {
+  vertical-align: middle;
+  margin-top: -50px;
+  margin-left: 10px;
+  padding: 8px;
 }
