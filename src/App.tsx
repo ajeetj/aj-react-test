@@ -3,15 +3,21 @@ import './App.css';
 import AddComment from "./components/AddComment"
 import CommentList from "./components/CommentList"
 import Axios from 'axios';
+import CommentType from "./types/CommentType"
 
-class App extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      comments: [],
-      errMsg: ""
-    }
+interface Props{
+}
+interface State{
+  comments: CommentType[];
+  errorMsg: string;
+}
+
+class App extends React.Component<Props, State> {
+  state: State = {
+    comments: [],
+    errorMsg: ""
   }
+  
   componentDidMount = () => {
     this.fetchComments();
   }
@@ -22,7 +28,7 @@ class App extends React.Component {
     }).then(res => this.setState({ comments: res.data.data.getAllComments}));
   };
 
-  addComment = (commentText) => {
+  addComment = (commentText: string) => {
     Axios.post("http://mbp-ajain:8080/graphql",{
       query: `mutation {addComment(input: "${commentText}"){id text} }`,
     }).then( res => {

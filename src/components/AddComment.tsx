@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent } from "react";
 
+interface Props{
+    onAddComment: (commentText: string) => void;
+}
 
-const AddComment = (props) => {
+const AddComment = (props: Props) => {
     
     const [commentText, setCommentText] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         props.onAddComment(commentText);
         setCommentText("");

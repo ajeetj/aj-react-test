@@ -1,6 +1,10 @@
 import React from "react";
 
-const Comment = (porps) => {
+interface Props{
+    text: string;
+}
+
+const Comment = (porps: Props) => {
     return (
         <div className="CommentParent">
             <div className="Comment">{porps.text}</div>
